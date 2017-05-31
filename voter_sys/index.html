@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+* {
+  margin: 0; padding: 0;
+  }
+
+body{
+	width: 60%;min-width: 500px;
+  min-height: 300px;
+	margin-right: auto;
+	margin-left: auto;
+  border: 5px solid #f4eade;
+  margin-bottom: 0;
+  margin-top: 0;
+
+}
+
+ul[class="nav"] {
+	
+	/*position: fixed;*/
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+    margin-top: 0;
+    letter-spacing: 0.04em;
+    background-color: #2f496e;
+
+}
+
+
+li.right {
+
+    float: right;
+    border-right: 1px solid #bbb;
+    
+}
+
+li.last{
+    border-right: none;
+    
+}
+li a {
+    display: block;
+    padding: 8px;   
+    text-decoration: none;
+    color: #fCf5f0;
+}
+li a:hover,.home:hover {
+    background-color: #f4eade;
+    color: #2f496e;
+    cursor: pointer;
+
+}
+
+h1{
+    text-align: center;
+}
+
+.about{
+    width: 100%;
+    color: #2f293e;
+    background: #f4eade;
+}
+
+div.create{
+    margin-left: 41%;
+    width: 10%;
+    text-align: center;
+    padding-top: auto;
+    border-radius: 35px;
+    background-color: #f4eade;
+}
+
+/*.btn_create{
+    border-radius: 31px;
+    /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);*/
+   /* box-shadow: 0 9px #BBA482;
+}
+.btn_create:active {
+  background-color: #ECD59F;
+  box-shadow: 0 5px #BBA482;
+  transform: translateY(4px);
+}*/
+
+
+.btn_create {
+    width: 110px;
+    height: 40px;
+  display: inline-block;
+  padding: auto;
+  font-size: 14px;
+  cursor: pointer;
+ 
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4293DB;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #3C83BB;
+}
+.btn_create:hover {background-color: #275884}
+
+.btn_create:active {
+  background-color: #275884;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+/*li.left{
+    margin-left: 635px;#BBA482
+    margin-top: 0;#ECD59F
+}*/
+
+/*li a.active {
+    background-color: #4CAF50;
+    color: white;
+}*/
+
+div.about p{
+    font-size: 130%;
+    line-height: 1.4em;
+    letter-spacing: 0.06em;
+    word-spacing: 0.6em;
+    padding: 1em;
+    
+
+}
+
+div.footer{
+    background-color: #2f496e;
+    width: 100%;
+    height: 155px;
+}
+div.footer a{
+    
+    width: 40%;
+    height: 20%;
+
+}
+.btn_soc{
+
+     border-radius: 31px;
+     margin-top: 5%;
+     margin-bottom: 5%;
+     display: inline-block;
+     margin-left: 20%;
+
+}
+
+p.copyright{
+    color: #ffffff;
+    float: left;
+    display: inline-block;
+    margin-left: 1em;
+}
+p.dev{
+    color: #ffffff;
+    display: inline-block;
+    float: right;
+    margin-right: 1em;
+}
+
+/*#example1 {
+    background-image: url(imgs/head.jpg);
+    
+    background-repeat: no-repeat;
+    padding: 15px;
+}*/
+
+
+
+/* The Modal For Sign_up (background) */
+.signup_modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 7%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    overflow: auto;
+    min-width: 760px;
+    min-height: 500px;
+}
+
+/* Modal Content For Sign_up */
+.signup_modal-content {
+    position: relative;
+    background-color: #283655;
+    margin: auto;
+    padding: 0;
+    color: #ffffff;
+    border: 1px solid #888;
+    width: 30%;
+    height: 76%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    min-width: 630px;
+    min-height: 515px;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: #111;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fefefe;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 12px 16px;
+    
+    color: #f4eade;
+    font-size: 20px;
+}
+
+.signup_div{
+  width: 73%;
+  margin: auto;
+  padding: auto;
+}
+
+.feild_set{
+  margin: auto;
+  font-size: 120%;
+  line-height: 1.4em;
+  letter-spacing: 0.06em;
+  word-spacing: 0.4em;
+  padding: 0.7em;
+  color: #f4eade;
+}
+
+legend{
+  font-size: 130%;
+  color: #f4eade;
+}
+
+/*signup Modal style end here*/
+
+/* The Modal For login (background) */
+.login_modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 12%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    /* background-color: rgb(0,0,0); Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    min-width: 500px;
+    min-height: 250px;
+}
+
+/* Modal Content For login */
+.login_modal-content {
+    position: relative;
+    background-color: #283655;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 35%;
+    height: 45%;
+    color: #edb83d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    min-width: 460px;
+    min-height: 305px;
+}
+
+/* Add Animation style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"*/
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.login_div{
+  width: 61%;
+  margin: auto;
+  padding: auto;
+}
+
+#login_from_signup,#signup_from_login{
+  color: #f4eade;
+}
+
+.link{
+  cursor: pointer;
+}
+
+/*create_event modal*/
+/* The Modal For create_event (background) */
+.create_event_modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 9%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    overflow: auto;
+    min-width: 300px;
+    min-height: 200px;
+}
+
+/* Modal Content For create_event */
+.create_event_modal-content {
+    position: relative;
+    background-color: #283655;
+    margin: auto;
+    padding: 0;
+    color: #ffffff;
+    border: 1px solid #888;
+    width: 33%;
+    height: 65%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    min-width: 430px;
+    min-height: 420px;
+}
+
+/* Add Animation style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"*/
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.create_event_div{
+  width: 80%;
+  margin: auto;
+  padding: auto;
+}
+/*end of create_event modal*/
+
+/*create_event2 modal*/
+/* The Modal For create_event2 (background) */
+.create_event2_modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 9%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    overflow: auto;
+    min-width: 300px;
+    min-height: 200px;
+}
+
+/* Modal Content For create_event2 */
+.create_event2_modal-content {
+    position: relative;
+    background-color: #283655;
+    margin: auto;
+    padding: 0;
+    color: #ffffff;
+    border: 1px solid #888;
+    width: 33%;
+    height: 65%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    min-width: 430px;
+    min-height: 420px;
+}
+
+/* Add Animation style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"*/
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.create_event2_div{
+  width: 80%;
+  margin: auto;
+  padding: auto;
+}
+/*end of create_event2 modal*/
+
+/*create_event3 modal*/
+/* The Modal For create_event3 (background) */
+.create_event3_modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 12%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    overflow: auto;
+    min-width: 300px;
+    min-height: 200px;
+}
+
+/* Modal Content For create_event3 */
+.create_event3_modal-content {
+    position: relative;
+    background-color: #283655;
+    margin: auto;
+    padding: 0;
+    color: #ffffff;
+    border: 1px solid #888;
+    width: 27.5%;
+    height: 47.5%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    min-width: 360px;
+    min-height: 345px;
+}
+
+/* Add Animation style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"*/
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.create_event3_div{
+  width: 80%;
+  margin: auto;
+  padding: auto;
+}
+/*end of create_event3 modal*/
+
+/*create_event4 modal*/
+/* The Modal For create_event4 (background) */
+.create_event4_modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 15%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    overflow: auto;
+    min-width: 300px;
+    min-height: 200px;
+}
+
+/* Modal Content For create_event4 */
+.create_event4_modal-content {
+    position: relative;
+    background-color: #283655;
+    margin: auto;
+    padding: 0;
+    color: #ffffff;
+    border: 1px solid #888;
+    width: 32%;
+    height: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    min-width: 406px;
+    min-height: 230px;
+}
+
+/* Add Animation style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"*/
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.create_event4_div{
+  width: 80%;
+  margin: auto;
+  padding: auto;
+}
+/*end of create_event4 modal*/
+
+input,textarea{
+    background-color: #f4eade;
+    color: #283655;
+    font-size:80%;
+    border-radius: 4px;
+}
+.submit{
+  background-color: #283655;
+  color: #fefefe;
+  border: 1px solid #f4eade;
+  font-size: 0.9em;
+}
+input[type=submit]:hover{
+  background-color: #203030;
+   
+}
+
+</style>
+</head>
+<body >
+<header>
+<div class="head" id="example1">
+	<a href="index.html" style="margin-left:3%;"><img src="imgs/logo.png" width="18.5%" height="18%" ></a>
+  <a href="index.html"><img src="imgs/logo.png" width="18.5%" height="18%" ></a>
+  <a href="index.html"><img src="imgs/logo.png" width="18.5%" height="18%" ></a>
+  <a href="index.html"><img src="imgs/logo.png" width="18.5%" height="18%" ></a>
+  <a href="index.html"><img src="imgs/logo.png" width="18.5%" height="18%" ></a>
+</div>
+
+<div class="navbar">
+  <a id="home" class="home" style="float: left;margin:0;position:absolute;" href="index.html"><img src="imgs/hme.png" width="35" height="35" style="border-radius:10px;"></a>
+  <ul class="nav">
+	   <li class="right last"><a id="login_myBtn">login</a></li>
+	   <li class="right"><a id="signup_myBtn">sign_up</a></li>
+	   <li class="right left"><a href="features.html">features</a></li>
+  </ul>
+</div>
+</header>
+<div class="about">
+  <h1>About VFM</h1>
+  <br />
+  <p><b>VFM (Vote For Me): </b>This place is for providing our users free platform for online voting for any type of event. You can organize any voting event online using this wesite.</p>
+  <br />
+  <p>This is <b>free</b> of cost. You dont need to pay any thing. Just create an event and check your results<i><b>(whenever you want or specified in the schedule for the event)</b></i>.</p>
+  <br />
+  <div class="create" style="background-color: f4eade;">
+    <a>
+      <button class="btn_create" id="create_event_myBtn">Create_Event</button>
+    </a>
+    <br /><br />
+  </div>
+</div>
+
+<div class="footer">
+  <a href="https://www.facebook.com" >
+    <img class="btn_soc" src="imgs/Fb1.png" width="50px" height="50px" onmouseover="mOverFb(this)" onmouseout="mOutFb(this)">
+  </a>
+  <a href="https://in.linkedin.com" >
+    <img class="btn_soc" src="imgs/l1.png" width="50px" height="50px" onmouseover="mOverIn(this)" onmouseout="mOutIn(this)">
+  </a>
+  <a href="https://plus.google.com" >
+    <img class="btn_soc" src="imgs/g1.png" width="50px" height="50px" onmouseover="mOverGp(this)" onmouseout="mOutGp(this)">
+  </a>
+  <br />
+  <p class="copyright">&copy:2017</p><p class="dev">Developed by: Satyam Srivastava</p>
+</div>
+
+
+<!-- The Modal For Sign_up -->
+<div id="signup_myModal" class="signup_modal">
+
+<!-- signupModal content -->
+  <div class="signup_modal-content">
+    <div class="modal-header">
+      <span class="close signup_close">&times;</span>
+      <p>sign_up for VFM</p>
+    </div>
+    <br />
+    <br />
+    <div class="signup_div">
+      <form action="/SignupForm.php" method="post">
+        <fieldset class="feild_set" name="sign_up">
+          <legend>Personal information:</legend>
+            <p style="margin-bottom: 0.2em;">Name:</p>
+            <input type="text" name="firstname" placeholder="first_name" size= "21" style="margin-bottom:0.5em;" required>
+            <input type="text" name="lastname" placeholder="last_name" size= "21" style="margin-bottom: 0.5em;" required><br />
+            <p style="margin-bottom: 0.2em;">E-mail:</p>
+            <input type="email" name="email" size= "21"  style="margin-bottom: 0.5em;" required>
+            <br />
+            <p style="margin-bottom: 0.2em;">Password:</p>
+            <input type="password" name="create_password" placeholder="password" size= "21" style="margin-bottom:0.5em;" required>
+            <input type="password" name="confirm_password" placeholder="password" size= "21" style="margin-bottom: 0.5em;" required>
+            <br />
+            <p style="margin-bottom: 0.2em;">DOB:</p>
+            <input class="link" type="date" name="bday" size= "25" style="margin-bottom: 0.5em;" required>
+            <br />
+            <span >Gender:</span>
+            <label class="link"><input type="radio" name="gender" value="male" checked> Male</label>
+            <label class="link"><input type="radio" name="gender" value="female"> Female</label>
+            <label class="link"><input type="radio" name="gender" value="other"> Other</label>
+            <br /> 
+        </fieldset>   
+        <br />
+        <input class="link submit" type="submit" value="Sign_up" style="float: right;width: 16%;padding: 1.5%;">
+      </form>
+    </div>
+    <br /><br />
+    <div style="padding: 12px 16px;font-size: 17px;color: #f4eade;">
+      Already have VFM account?<a class="link" id="login_from_signup" style="color: #07B4E3;">login</a>
+    </div>
+  </div>
+</div>
+<!--here ends modal for sign_up-->
+
+<!-- The Modal For login -->
+<div id="login_myModal" class="login_modal">
+<!-- loginModal content -->
+  <div class="login_modal-content">
+      <div class="modal-header">
+        <span class="close login_close">&times;</span>
+        <p>login to VFM</p>
+        <br />
+      </div>
+      <div class="login_div">
+        <form action="/loginForm.php" method="post">
+          <fieldset class="feild_set" name="sign_up">
+            <p style="margin-bottom: 0.2em;">E-mail(User_name):</p>
+            <input type="email" name="email" size= "21"  style="margin-bottom: 0.5em;" required><br>
+            <p style="margin-bottom: 0.2em;">Password:</p>
+            <input type="password" name="create_password" size= "21" style="margin-bottom:0.5em;" required>
+          </fieldset>   
+          <br />
+          <input class="link submit" type="submit" value="Login" style="float: right;width:20%;padding: 2%;">
+          <!--span class="link" style="float: right;color: #f4eade;margin-right:0.8em;font-size:1.2em">forgot_password!!!</span-->
+        </form>
+
+      </div>
+      <br />
+      <div style="padding: 12px 16px;font-size: 17px;color: #f4eade;">
+        New to VFM?<a class="link" id="signup_from_login" style="color: #07B4E3;">sign_up</a>
+      </div>
+  </div>
+</div>
+<!--here ends modal for login-->
+
+<!-- The Modal For create_event -->
+<div id="create_event_myModal" class="create_event_modal">
+<!-- create_eventModal content -->
+  <div class="create_event_modal-content">
+    <div class="modal-header">
+      <span class="close create_event_close">&times;</span>
+      <p>Create Event</p>
+    </div>
+    <div class="create_event_div">
+      <form action="/create_eventForm.php" method="post">
+        <fieldset class="feild_set" name="create_event">
+          <legend>General</legend>
+            <p style="margin-bottom: 0.2em;">Event-Title:</p>
+            <input type="text" name="event_name" size= "26" style="margin-bottom:0.5em;" placeholder="title_for_event" required>
+            <br />
+            <p style="margin-bottom: 0.2em;">Description:</p>
+            <textarea name="event_name" style="margin-bottom:0.5em; width: 303px;height: 140px;font-size: 15px;" wrap="hard"
+            placeholder="something about the event......" required></textarea>
+            <br />
+        </fieldset>   
+        <br />
+        <input class="link submit" type="submit" value="next" style="float: right;width:15%;padding: 1.5%;" id="create_event2_myBtn">
+      </form>
+    </div>
+  </div>
+</div>
+<!--here ends modal for create_event-->
+
+<!-- The Modal For create_event2 -->
+<div id="create_event2_myModal" class="create_event2_modal">
+<!-- create_eventModal2 content -->
+  <div class="create_event2_modal-content">
+    <div class="modal-header">
+      <span class="close create_event2_close">&times;</span>
+      <p>Create Event</p>
+    </div>
+    <div class="create_event2_div">
+      <form action="/create_event2Form.php" method="post">
+        <fieldset class="feild_set" name="create_event2">
+          <legend>Conditions:</legend>
+            <p style="margin-bottom: 0.2em;">Candidates(Limit_max):</p>
+            <input class="link" type="number" name="no_of_candidates" style="margin-bottom:0.5em;" min="2"required>
+            <br />
+            <p style="margin-bottom: 0.2em;">Candidate's Age:</p>
+            <input class="link" type="number" name="maxage_of_candidates" style="margin-bottom:0.5em;" placeholder="min_age_candidate" required>
+            <input class="link" type="number" name="minage_of_candidates" style="margin-bottom:0.5em;" placeholder="max_age_candidate" required>
+            <br />
+            <p style="margin-bottom: 0.2em;">Voter's Age:</p>
+            <input class="link" type="number" name="minage_of_voters" style="margin-bottom:0.5em;" placeholder="min_age_voter" required>
+            <input class="link" type="number" name="maxage_of_voters" style="margin-bottom:0.5em;" placeholder="max_age_voter" required>
+        </fieldset>   
+        <br />
+        <input class="link submit" type="submit" value="next" style="float: right;width:15%;padding: 1.5%;" id="create_event3_myBtn">
+      </form>
+    </div>
+  </div>
+</div>
+<!--here ends modal for create_event2-->
+
+<!-- The Modal For create_event3 -->
+<div id="create_event3_myModal" class="create_event3_modal">
+<!-- create_eventModal3 content -->
+  <div class="create_event3_modal-content">
+    <div class="modal-header">
+      <span class="close create_event3_close">&times;</span>
+      <p>Create Event</p>
+    </div>
+    <div class="create_event3_div">
+      <form action="/create_event3Form.php" method="post">
+        <fieldset class="feild_set" name="create_event2">
+           <legend>Schedule:</legend>
+           <span style="margin-bottom: 0.2em;">Begin:<input class="link" type="datetime-local" style="float:right;" name="begin_date" required></span>
+           <br /><br />
+           <span style="margin-bottom: 0.2em;">End:<input class="link" type="datetime-local" name="end_date" style="margin-bottom:0.5em;float:right;" required></span>
+           <br  /><br />
+           <span style="margin-bottom: 0.2em;">Result:</span>
+           <label class="link"><input type="radio" name="result_date" value="Set_Date" style="margin-bottom:0.5em;margin-right:0.4em;" required checked>Set_Date</label>
+           <label class="link"><input type="radio" name="result_date" value="Live" style="margin-bottom:0.5em;margin-right:0.4em;" required>Live</label>
+           <br />
+           <input class="link" type="datetime-local" name="end_date" style="margin-bottom:0.5em;margin-top:0.5em;float:right;" required>
+        </fieldset>   
+        <br />
+        <input id="create_event4_myBtn" class="link submit" type="submit" value="Create_Event" style="float: right;width:38%;padding: 2%;">
+      </form>
+    </div>
+  </div>
+</div>
+<!--here ends modal for create_event3-->
+
+<!-- The Modal For create_event4 -->
+<div id="create_event4_myModal" class="create_event4_modal">
+<!-- create_eventModal4 content -->
+  <div class="create_event4_modal-content">
+    <div class="modal-header">
+      <span class="close create_event4_close">&times;</span>
+      <p style="font-size: 100%;color: #f4eade;">Upload an Image for your event</p>
+    </div>
+    <div class="create_event4_div">
+      <form action="create_event4upload.php" method="post" enctype="multipart/form-data">
+        <fieldset class="feild_set" name="create_event2">
+          <br />
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <br/><br/>
+            <input class="link submit" type="submit" value="Upload" name="img_submit" style="width:25%;float: right;padding: 1%;"> 
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+<!--here ends modal for create_event4-->
+
+<script>
+function mOverFb(obj) {
+      obj.src = "imgs/Fb2.png";
+}
+
+function mOutFb(obj) {
+    obj.src= "imgs/Fb1.png";
+}
+
+function mOverIn(obj) {
+      obj.src = "imgs/l2.png";
+}
+
+function mOutIn(obj) {
+    obj.src= "imgs/l1.png";
+}
+
+function mOverGp(obj) {
+      obj.src = "imgs/g2.png";
+}
+
+function mOutGp(obj) {
+    obj.src= "imgs/g1.png";
+}
+
+//loginModal script
+// Get the modal
+var login_mod = document.getElementById('login_myModal');
+
+// Get the button that opens the modal
+var login_modbtn1 = document.getElementById("login_myBtn");
+var login_modbtn2 = document.getElementById("login_from_signup");
+//stop
+// Get the <span> element that closes the modal
+var login_modspan = document.getElementsByClassName("login_close")[0];
+
+// When the user clicks the button, open the modal 
+login_modbtn1.onclick = function() {
+    login_mod.style.display = "block";
+}
+login_modbtn2.onclick = function() {
+    login_mod.style.display = "block"; //when user clicks login from sign_up modal
+    signup_mod.style.display = "none"; //hides sign_up modal
+}
+// When the user clicks on <span> (x), close the modal
+login_modspan.onclick = function() {
+    login_mod.style.display = "none";
+}
+//here ends login modal script
+
+//signupModal script
+// Get the modal
+var signup_mod = document.getElementById('signup_myModal');
+
+// Get the button that opens the modal
+var signup_modbtn1 = document.getElementById("signup_myBtn");
+var signup_modbtn2 = document.getElementById("signup_from_login");
+//stop
+// Get the <span> element that closes the modal
+var signup_modspan = document.getElementsByClassName("signup_close")[0];
+
+// When the user clicks the button, open the modal 
+signup_modbtn1.onclick = function() {
+    signup_mod.style.display = "block";
+}
+signup_modbtn2.onclick = function() {
+    signup_mod.style.display = "block"; //when user clicks sign_up from login modal
+    login_mod.style.display = "none"; //hide the login modal 
+}
+
+// When the user clicks on <span> (x), close the modal
+signup_modspan.onclick = function() {
+    signup_mod.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if ((event.target == signup_mod)) {
+        signup_mod.style.display = "none";
+    }
+    else if (event.target == login_mod) {
+        login_mod.style.display = "none";
+    }
+    else if (event.target == create_event_mod) {
+        create_event_mod.style.display = "none";
+    }
+    else if (event.target == create_event2_mod) {
+        create_event2_mod.style.display = "none";
+    }
+    else if (event.target == create_event3_mod) {
+        create_event3_mod.style.display = "none";
+    }
+    else if (event.target == create_event4_mod) {
+        create_event4_mod.style.display = "none";
+    }
+}
+//here ends signup modal script
+
+//create_event Modal script
+// Get the modal
+var create_event_mod = document.getElementById('create_event_myModal');
+
+// Get the button that opens the modal
+var create_event_modbtn = document.getElementById("create_event_myBtn");
+//stop
+// Get the <span> element that closes the modal
+var create_event_modspan = document.getElementsByClassName("create_event_close")[0];
+
+// When the user clicks the button, open the modal 
+create_event_modbtn.onclick = function() {
+    create_event_mod.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+create_event_modspan.onclick = function() {
+    create_event_mod.style.display = "none";
+}
+//here ends create_event modal script
+
+//create_event2 Modal script
+// Get the modal
+var create_event2_mod = document.getElementById('create_event2_myModal');
+
+// Get the button that opens the modal
+var create_event2_modbtn = document.getElementById("create_event2_myBtn");
+//stop
+// Get the <span> element that closes the modal
+var create_event2_modspan = document.getElementsByClassName("create_event2_close")[0];
+
+// When the user clicks the button, open the modal 
+create_event2_modbtn.onclick = function() {
+    create_event2_mod.style.display = "block";
+    create_event_mod.style.display = "none";
+}
+
+// When the user clicks on <span> (x), close the modal
+create_event2_modspan.onclick = function() {
+    create_event2_mod.style.display = "none";
+}
+//here ends create_event2 modal script
+
+//create_event3 Modal script
+// Get the modal
+var create_event3_mod = document.getElementById('create_event3_myModal');
+
+// Get the button that opens the modal
+var create_event3_modbtn = document.getElementById("create_event3_myBtn");
+//stop
+// Get the <span> element that closes the modal
+var create_event3_modspan = document.getElementsByClassName("create_event3_close")[0];
+
+// When the user clicks the button, open the modal 
+create_event3_modbtn.onclick = function() {
+    create_event3_mod.style.display = "block";
+    create_event2_mod.style.display = "none";
+}
+
+// When the user clicks on <span> (x), close the modal
+create_event3_modspan.onclick = function() {
+    create_event3_mod.style.display = "none";
+}
+//here ends create_event3 modal script
+
+//create_event4 Modal script
+// Get the modal
+var create_event4_mod = document.getElementById('create_event4_myModal');
+
+// Get the button that opens the modal
+var create_event4_modbtn = document.getElementById("create_event4_myBtn");
+//stop
+// Get the <span> element that closes the modal
+var create_event4_modspan = document.getElementsByClassName("create_event4_close")[0];
+
+// When the user clicks the button, open the modal 
+create_event4_modbtn.onclick = function() {
+    create_event4_mod.style.display = "block";
+    create_event3_mod.style.display = "none";
+}
+
+// When the user clicks on <span> (x), close the modal
+create_event4_modspan.onclick = function() {
+    create_event4_mod.style.display = "none";
+}
+//here ends create_event4 modal script
+</script>
+
+</body>
+</html>
